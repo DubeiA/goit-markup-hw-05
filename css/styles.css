@@ -365,7 +365,13 @@ img {
 	width: 100%;
 	height: 100%;
 
-	background-color: rgba(0, 0, 0, 0.2);;
+	opacity: 1;
+	z-index: 1;
+
+	background-color: rgba(0, 0, 0, 0.2);
+
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .backdrop.is-hidden { 
 	opacity: 0;
@@ -376,7 +382,9 @@ img {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform:translate(-50%, -50%) ;
+	transform:translate(-50%, -50%) scale(1.0);
+
+	margin: 0 auto;
 
 	width: 528px;
 	height: 581px;
@@ -527,20 +535,26 @@ img {
 	margin-left: 30px;
 }
 
-/*-------------------------------Work Position -------------------------------*/
-.work-description { 
+.work-foto { 
 	position: relative;
 }
 
+/*-------------------------------Work Position -------------------------------*/
+/* .work-description { 
+	position: relative;
+} */
+
 .work-text { 
 	position: absolute;
-	display: inline-block;
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
 
 	width: 100%;
 	height: 70px;
 	bottom: 0;
 
-	padding: 27px 82px;
 	font-weight: 700;
 	line-height: 1.14;
 
@@ -622,7 +636,8 @@ img {
 	height: 44px;
 	border-radius: 50%;
 
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+	color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 
 }
 
@@ -791,6 +806,26 @@ img {
 	/* border: 1px solid blue; */
 }
 
+
+.footer-social-icon { 
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	color: var(--client-color);
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-icon:hover,
+.footer-social-icon:focus {
+	background-color: var(--hover-color);
+		
+}
+
 .white-icon-footer .icon-team-decor { 
 	color: var(--main-backg-color);
 	
@@ -803,7 +838,6 @@ img {
 	background-color: rgba(255, 255, 255, 0.1);
 	
 }
-
 
 
 
@@ -932,45 +966,12 @@ img {
 /* ------------------- hidden-list ----position--------------------- */
 
 
-/* .hidden-list:hover .thumb-proposition::before { 
-	transform: translateY(0);
-} */
-
-.hidden-list { 
-
-	overflow: hidden;
-}
-
 .thumb-proposition{ 
 	position: relative;
-	/* overflow: hidden; */
+	overflow: hidden;
 	
 }
 
-/* .thumb-proposition::before { 
-	content:"";
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	
-	width: 100%;
-	height: 100%;
-
-
-	transform: translateY(100%);
-
-
-	transition:	translateY 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-	
-} */
-	/* opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), */
-
-/* .thumb-proposition:hover::before { 
-	opacity: 1;
-	transform: translateY(0);
-} */
 
 .text-proposition { 
 	position: absolute;
@@ -997,12 +998,41 @@ img {
 }
 
 
-.text-proposition:hover { 
+.portfolio-list:hover .text-proposition, .portfolio-list:focus .text-proposition { 
 	
 	opacity: 1;
 	transform: translateY(0);
 }
 
+
+
+
+/* невдачі */
+
+/* .thumb-proposition::before { 
+	content:"";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+
+
+	transform: translateY(100%);
+
+
+	transition:	translateY 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	
+} */
+	/* opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), */
+
+/* .thumb-proposition:hover::before { 
+	opacity: 1;
+	transform: translateY(0);
+} */
 
 /*  --------------------------дубиль 2 ------------------------------ */
 /* .thumb-proposition { 
