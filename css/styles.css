@@ -410,10 +410,10 @@ img {
 	width: 30px;
 	height: 30px;
 	
-	text-decoration: none;
-	
 	background-color: var(--main-backg-color);
-	
+
+	cursor: pointer;
+	text-decoration: none;
 	
 	transition: box-shadow var(--animation-cubic);
 }
